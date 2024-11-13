@@ -1,14 +1,14 @@
-<p align="center" style="font-weight: bold;">
-    <!--<img alt="logo" src="https://user-images.githubusercontent.com/5068797/161198565-ac18c5ac-c0d9-4669-9568-b2009e944d77.png#gh-light-mode-only" />
-    <img alt="logo" src="https://user-images.githubusercontent.com/5068797/161364257-0c1d81f6-62ac-4192-93f8-836b4ce0fd06.png#gh-dark-mode-only" />-->
+ <!--<p align="center" style="font-weight: bold;">
+   <img alt="logo" src="https://user-images.githubusercontent.com/5068797/161198565-ac18c5ac-c0d9-4669-9568-b2009e944d77.png#gh-light-mode-only" />
+    <img alt="logo" src="https://user-images.githubusercontent.com/5068797/161364257-0c1d81f6-62ac-4192-93f8-836b4ce0fd06.png#gh-dark-mode-only" />
     Logo aqui
-</p>
+</p>-->
 
 ## Perfil
 
 Consulte o meu perfil <a href="https://github.com/alexandervsilva/alexandervsilva/blob/master/README.md">aqui</a>.
 
-<h1 align="center" style="font-weight: bold;">Meu Projeto 💻</h1>
+<h1 align="center" style="font-weight: bold;">DotNet8.OpenTelemetry.Grafana.Tempo 💻</h1>
 
 ## Índice
 
@@ -25,8 +25,8 @@ Consulte o meu perfil <a href="https://github.com/alexandervsilva/alexandervsilv
 ## Começo rápido
 
 <p align="center" style="font-weight: bold;">
-    <!--<img alt="FrontEnd" src="https://user-images.githubusercontent.com/5068797/164293734-a72fbeeb-0965-4413-a624-29e1c56c25df.png" />-->
-    Imagem Front-End aqui
+    <img alt="Endpoints" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/endpoints-apicontagem.png" />
+    
 </p>
 
 ## Descrição
@@ -63,61 +63,35 @@ Consulte <a href="https://github.com/alexandervsilva/Repositorio.Modelo.Basico/b
 ![Swagger][SWAGGER_BADGE]
 ![MicrosoftSQLServer][SQLSERVER_BADGE]
 
-- .NET 6
-    - ASP.NET MVC Core
-    - ASP.NET WebApi
-    - ASP.NET Minimal API
-    - ASP.NET Identity Core
-    - Refresh Token
-    - JWT with rotactive public / private key    
-    - GRPC
-    - Background Services
-    - Entity Framework Core 6
+- .NET 8
+    
+    - ASP.NET WebApi    
+    - Entity Framework Core 8.0.10
 
-- Components / Services
-    - RabbitMQ
-    - EasyNetQ
-    - Refit 
-    - Polly
-    - Bogus
-    - Dapper
-    - FluentValidator
-    - MediatR
-    - Swagger UI with JWT support
-    - NetDevPack
-    - NetDevPack.Identity
-    - NetDevPack.Security.JWT
+- Components / Services    
+    - FluentAPI    
+    - Swagger UI   
+    - OpenTelemetry
+    - Serilog
+    - dbup-sqlserver    
 
 - Hosting
-    - IIS
-    - NGINX
+    - IIS   
     - Docker (with compose)
 
 ## Arquitetura
 
 ### Arquitetura completa implementando as preocupações mais importantes:
 
-- Hexagonal Architecture
-- Clean Code
-- Clean Architecture
-- DDD - Domain Driven Design (Layers and Domain Model Pattern)
-- Domain Events
-- Domain Notification
-- Domain Validations
-- CQRS (Imediate Consistency)
-- Retry Pattern
-- Circuit Breaker
 - Unit of Work
 - Repository
-- Specification Pattern
-- API Gateway / BFF
 
 ---
 
 ### Toda a aplicação é baseada em uma solução única com X API's e uma aplicação web (MVC)
 
 <p align="center">
-    <img alt="read before" src="https://user-images.githubusercontent.com/5068797/161202409-edcf2f38-0714-4de5-927d-1a02be4501ec.png" />
+     <img alt="Solution" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/solution.png" />
 </p>
 
 ## Erros e solicitações de recursos
