@@ -1,0 +1,6 @@
+@AVS.Otel.APIOrquestracao_HostAddress = http://localhost:5249
+
+GET {{AVS.Otel.APIOrquestracao_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
