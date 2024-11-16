@@ -36,7 +36,7 @@ Consulte o meu perfil <a href="https://github.com/alexandervieira/alexandervieir
 
 ## Lista de comandos úteis do GIT
 
-Consulte <a href="https://github.com/alexandervieira/lista-comandos-git/blob/master/git.md"> aqui!</a>.
+Consulte <a href="https://github.com/alexandervieira/lista-comandos-git/blob/master/README.md"> aqui!!!</a>.
 
 ## Tecnologias
 
