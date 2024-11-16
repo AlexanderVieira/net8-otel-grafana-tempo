@@ -9,13 +9,21 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
+using OpenTelemetry.Metrics;
+using AVS.Otel.APIContagem.Data.DatabaseFlavor;
+using static AVS.Otel.APIContagem.Data.DatabaseFlavor.ProviderConfiguration;
+using Npgsql;
+using AVS.Otel.APIContagem.Metrics;
 
 namespace AVS.Otel.APIContagem
 {
     public class Program
     {
         public static void Main(string[] args)
-        {
+         {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Documentacao do OpenTelemetry:
@@ -24,32 +32,10 @@ namespace AVS.Otel.APIContagem
             // Integracao do OpenTelemetry com Jaeger e tambem Grafana Tempo em .NET:
             // https://github.com/open-telemetry/opentelemetry-dotnet/tree/e330e57b04fa3e51fe5d63b52bfff891fb5b7961/docs/trace/getting-started-jaeger#collect-and-visualize-traces-using-jaeger
 
-
-            Console.WriteLine("Executando Migrations com DbUp...");
-
-            // Aguarda 10 segundos para se assegurar de que
-            // a instancia do SQL Server esteja ativa 
-            Thread.Sleep(12_000);
-
-            var upgrader = DeployChanges.To.SqlDatabase(builder.Configuration.GetConnectionString("BaseMaster"))
-                .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
-                .LogToConsole()
-                .Build();
-
-            var result = upgrader.PerformUpgrade();
-
-            if (result.Successful)
-            {
-                Console.WriteLine("Migrations do DbUp executadas com sucesso!");
-            }
-            else
-            {
-                Environment.ExitCode = -1;
-                Console.WriteLine($"Falha na execucao das Migrations do DbUp: {result.Error.Message}");
-                return;
-            }
-
+            builder.Services.ConfigureProviderForContext<ContagemContext>(DetectDatabase(builder.Configuration));
+            
             builder.Services.AddScoped<ContagemRepository>();
+            builder.Services.AddSingleton<OtelMetrics>();
 
             builder.Services.AddSerilog(new LoggerConfiguration()
                 .WriteTo.Console()
@@ -70,14 +56,10 @@ namespace AVS.Otel.APIContagem
                     })
                 .Enrich.WithSpan(new SpanOptions() { IncludeOperationName = true, IncludeTags = true })
                 .CreateLogger());
+                      
+            var meters = new OtelMetrics();
 
-            builder.Services.AddDbContext<ContagemContext>(options =>
-            {
-                options.UseSqlServer(
-                    builder.Configuration.GetConnectionString("BaseContagem"));
-            });
-
-            builder.Services.AddOpenTelemetry()
+             builder.Services.AddOpenTelemetry()
             .WithTracing((traceBuilder) =>
             {
                 traceBuilder
@@ -87,7 +69,27 @@ namespace AVS.Otel.APIContagem
                             .AddService(serviceName: OpenTelemetryExtensions.ServiceName,
                                 serviceVersion: OpenTelemetryExtensions.ServiceVersion))
                     .AddAspNetCoreInstrumentation()
+                    .AddHttpClientInstrumentation()                 
                     .AddSqlClientInstrumentation()
+                    .AddConnectorNet()
+                    .AddNpgsql()
+                    .AddSource("SQLiteDataSource")                    
+                    .AddOtlpExporter()
+                    .AddConsoleExporter();
+            })
+            .WithMetrics((metricBuilder) =>
+            {
+                metricBuilder
+                    //.AddSource(OpenTelemetryExtensions.ServiceName)
+                    .SetResourceBuilder(
+                        ResourceBuilder.CreateDefault()
+                            .AddService(serviceName: OpenTelemetryExtensions.ServiceName,
+                                serviceVersion: OpenTelemetryExtensions.ServiceVersion))
+                    .AddMeter(meters.MetricName)                                
+                    .AddAspNetCoreInstrumentation()
+                    .AddHttpClientInstrumentation()
+                    .AddProcessInstrumentation()
+                    .AddRuntimeInstrumentation()
                     .AddOtlpExporter()
                     .AddConsoleExporter();
             });

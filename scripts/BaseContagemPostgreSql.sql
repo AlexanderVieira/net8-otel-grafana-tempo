@@ -1,6 +1,6 @@
-CREATE DATABASE basecontagem;
+CREATE DATABASE BaseContagem;
 
-\c basecontagem;
+use BaseContagem;
 
 CREATE TABLE "HistoricoContagem" (
     "Id" SERIAL NOT NULL,

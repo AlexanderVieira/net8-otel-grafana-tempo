@@ -9,9 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIContagem", "APIContagem"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIOrquestracao", "APIOrquestracao", "{4BB2FAD1-95B6-4828-9119-425CBD5C0BC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVS.Otel.APIContagem", "src\AVS.Otel.APIContagem\AVS.Otel.APIContagem.csproj", "{430E3FDA-5630-470F-89EF-240559761FE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVS.Otel.APIContagem", "src\AVS.Otel.APIContagem\AVS.Otel.APIContagem.csproj", "{430E3FDA-5630-470F-89EF-240559761FE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVS.Otel.APIOrquestracao", "src\AVS.Otel.APIOrquestracao\AVS.Otel.APIOrquestracao.csproj", "{6980F87A-415B-41B2-BBE1-ECF39D5F4E48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AVS.Otel.APIOrquestracao", "src\AVS.Otel.APIOrquestracao\AVS.Otel.APIOrquestracao.csproj", "{6980F87A-415B-41B2-BBE1-ECF39D5F4E48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3085936F-560C-432A-B01D-E2B2669D754A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

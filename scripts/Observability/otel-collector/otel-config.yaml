@@ -1,0 +1,124 @@
+extensions:
+  health_check:
+  zpages:
+    endpoint: 0.0.0.0:55679
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318  
+  zipkin:
+  hostmetrics:
+    scrapers:
+      load:
+      cpu:
+      disk:
+      filesystem:
+      memory:
+      network:
+      paging:
+      process:
+  loki:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:3500
+      grpc:
+        endpoint: 0.0.0.0:3600
+    use_incoming_timestamp: true
+  otelarrow:
+    protocols:
+      grpc:
+        endpoint: "0.0.0.0:14250"
+
+processors:
+  batch:
+    timeout: 10s
+
+exporters:
+  logging:
+    #logLevel: debug
+  file/traces:
+    path: /log/otel/traces.log
+  file/metrics:
+    path: /log/otel/metrics.log
+  file/logs:
+    path: /log/otel/logs.log
+  otelarrow:
+    endpoint: "${JAEGER_ENDPOINT}"
+    tls:
+      insecure: true
+  prometheus:
+    endpoint: "${PROMETHEUS_ENDPOINT}"
+  loki:
+    endpoint: "${LOKI_ENDPOINT}"
+    tls:
+      insecure: true
+  zipkin:
+    endpoint: "${ZIPKIN_ENDPOINT}"
+    tls:
+      insecure: true
+  #otlp/aspecto:
+  #    endpoint: "${ASPECTO_ENDPOINT}"
+  #    headers:
+  #      Authorization: "${ASPECTO_APIKEY}"
+  azuremonitor:
+    instrumentation_key: "${AZ_INSTRUMENTATION_KEY}"
+  datadog:
+    api:
+      key: "${DATADOG_KEY}"
+      site: "${DATADOG_SITE}"
+  otlphttp:    
+    endpoint: "${DYNATRACE_ENDPOINT}"
+    headers:
+      Authorization: "${DYNATRACE_TOKEN}"
+  otlp:
+    endpoint: tempo:4317
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers:
+        - otlp
+        - zipkin
+        - otelarrow                   
+      processors: [batch]
+      exporters:
+        - logging 
+        - file/traces        
+        - zipkin
+        #- otlp/aspecto
+        - azuremonitor
+        - otlphttp
+        - otlp
+        - otelarrow        
+    metrics:
+      receivers:       
+        - hostmetrics
+        - otelarrow       
+      processors: [batch]
+      exporters:
+        - logging 
+        - file/metrics
+        - prometheus
+        - datadog
+        - otlphttp            
+    logs:
+      receivers:        
+        - loki
+        - otelarrow        
+      processors: [batch]
+      exporters:
+        - logging 
+        - file/logs
+        - loki
+        - azuremonitor
+        - datadog
+        - otlphttp        
+  extensions:
+    - health_check
+    - zpages

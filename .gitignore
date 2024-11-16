@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Volumes
+datasource/
+mssql_data/
+mysql_data/
+postgres_data/
+tempo-data

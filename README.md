@@ -16,6 +16,7 @@ Consulte o meu perfil <a href="https://github.com/alexandervsilva/alexandervsilv
 - [Descrição](#descrição)
 - [Tecnologias](#tecnologias)
 - [Arquitetura](#arquitetura)
+- [Observabilidade](#observabilidade)
 - [Erros e solicitações de recursos](#erros-e-solicitações-de-recursos)
 - [Contribuição](#contribuição)
 - [Criador](#criador)
@@ -93,6 +94,24 @@ Consulte <a href="https://github.com/alexandervsilva/Repositorio.Modelo.Basico/b
 <p align="center">
      <img alt="Solution" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/solution.png" />
 </p>
+
+## Observabilidade
+
+### Trace - Grafana/Tempo
+
+<p align="center">
+     <img alt="Solution" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/grafana-tempo-trace.png" />
+</p>
+
+---
+
+### Logs - Grafana/Loki
+
+<p align="center">
+     <img alt="Solution" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/grafana-loki-logs.png" />
+</p>
+
+---
 
 ## Erros e solicitações de recursos
 Tem um bug ou uma solicitação de recurso? Leia primeiro as [diretrizes do problema](https://reponame/blob/master/CONTRIBUTING.md)  e pesquise os problemas existentes e encerrados. [abra um novo problema](https://github.com/alexandervsilva/<meu-repositorio>/issues).
