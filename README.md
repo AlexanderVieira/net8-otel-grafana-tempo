@@ -6,7 +6,7 @@
 
 ## Perfil
 
-Consulte o meu perfil <a href="https://github.com/alexandervsilva/alexandervsilva/blob/master/README.md">aqui</a>.
+Consulte o meu perfil <a href="https://github.com/alexandervieira/alexandervieira/blob/master/README.md">aqui</a>.
 
 <h1 align="center" style="font-weight: bold;">DotNet8.OpenTelemetry.Grafana.Tempo 💻</h1>
 
@@ -26,7 +26,7 @@ Consulte o meu perfil <a href="https://github.com/alexandervsilva/alexandervsilv
 ## Começo rápido
 
 <p align="center" style="font-weight: bold;">
-    <img alt="Endpoints" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/endpoints-apicontagem.png" />
+    <img alt="Endpoints" src="https://github.com/alexandervieira/net8-otel-grafana-tempo/blob/master/images/endpoints-apicontagem.png" />
     
 </p>
 
@@ -36,7 +36,7 @@ Consulte o meu perfil <a href="https://github.com/alexandervsilva/alexandervsilv
 
 ## Lista de comandos úteis do GIT
 
-Consulte <a href="https://github.com/alexandervsilva/Repositorio.Modelo.Basico/blob/master/git.md">aqui</a>.
+Consulte <a href="https://github.com/alexandervsilva/repositorio-lista-comandos-git/blob/master/git.md">aqui</a>.
 
 ## Tecnologias
 
@@ -92,7 +92,7 @@ Consulte <a href="https://github.com/alexandervsilva/Repositorio.Modelo.Basico/b
 ### Toda a aplicação é baseada em uma solução única com X API's e uma aplicação web (MVC)
 
 <p align="center">
-     <img alt="Solution" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/solution.png" />
+     <img alt="Solution" src="https://github.com/alexandervieira/net8-otel-grafana-tempo/blob/master/images/solution.png" />
 </p>
 
 ## Observabilidade
@@ -100,7 +100,7 @@ Consulte <a href="https://github.com/alexandervsilva/Repositorio.Modelo.Basico/b
 ### Trace - Grafana/Tempo
 
 <p align="center">
-     <img alt="Solution" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/grafana-tempo-trace.png" />
+     <img alt="Solution" src="https://github.com/alexandervieira/net8-otel-grafana-tempo/blob/master/images/grafana-tempo-trace.png" />
 </p>
 
 ---
@@ -108,13 +108,13 @@ Consulte <a href="https://github.com/alexandervsilva/Repositorio.Modelo.Basico/b
 ### Logs - Grafana/Loki
 
 <p align="center">
-     <img alt="Solution" src="https://github.com/alexandervsilva/DotNet8.OpenTelemetry.Grafana.Tempo/blob/master/images/grafana-loki-logs.png" />
+     <img alt="Solution" src="https://github.com/alexandervieira/net8-otel-grafana-tempo/blob/master/images/grafana-loki-logs.png" />
 </p>
 
 ---
 
 ## Erros e solicitações de recursos
-Tem um bug ou uma solicitação de recurso? Leia primeiro as [diretrizes do problema](https://reponame/blob/master/CONTRIBUTING.md)  e pesquise os problemas existentes e encerrados. [abra um novo problema](https://github.com/alexandervsilva/<meu-repositorio>/issues).
+Tem um bug ou uma solicitação de recurso? Leia primeiro as [diretrizes do problema](https://reponame/blob/master/CONTRIBUTING.md)  e pesquise os problemas existentes e encerrados. [abra um novo problema](https://github.com/alexandervieira/net8-otel-grafana-tempo/issues).
 
 ## Contribuição
 
@@ -122,7 +122,7 @@ Por favor, leia nossas [diretrizes de contribuição](https://reponame/blob/mast
 
 ## Criador
 
-- <https://github.com/alexandervsilva>
+- <https://github.com/alexandervieira>
 
 ## Agradecimentos
 
@@ -130,7 +130,7 @@ Obrigado por consultar, divulgar ou contribuir.
 
 ## Direitos e licença
 
-Código e documentação com copyright 2021 dos autores. Código divulgado sob a [MIT License](https://github.com/alexandervsilva/Repositorio.Modelo.Basico/blob/master/LICENSE).
+Código e documentação com copyright 2021 dos autores. Código divulgado sob a [MIT License](https://github.com/alexandervieira/net8-otel-grafana-tempo/blob/master/LICENSE).
 
 <h3>Documentações que podem ajudar</h3>
 
