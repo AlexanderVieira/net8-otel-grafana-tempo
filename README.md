@@ -32,7 +32,7 @@ Consulte o meu perfil <a href="https://github.com/alexandervieira/alexandervieir
 
 ## Descrição
 
-- Exemplos de uso de OpenTelemetry + Grafana + Tempo + Loki com .NET 8 + ASP.NET Core em APIs REST. Estas aplicações demonstram também a implementação de distributed tracing com o Grafana Tempo e logging com o Grafana Loki, utilizando ainda SQL Server, PostgreSQL e MySQL.
+- Exemplos de uso de OpenTelemetry + Grafana + Tempo + Loki com .NET 8 + ASP.NET Core em APIs REST. Estas aplicações demonstram também a implementação de distributed tracing com o Grafana Tempo e logging com o Grafana Loki, utilizando um mecanismo para troca de bando de dados como: SQL Server, PostgreSQL, MySQL e SQLite.
 
 ## Lista de comandos úteis do GIT
 
@@ -74,22 +74,18 @@ Consulte <a href="https://github.com/alexandervieira/lista-comandos-git/blob/mas
     - Swagger UI   
     - OpenTelemetry
     - Serilog
-    - dbup-sqlserver    
+    - dbup-sqlserver
+    - Unit of Work
+    - Repository    
 
 - Hosting
     - IIS   
     - Docker (with compose)
 
 ## Arquitetura
-
-### Arquitetura completa implementando as preocupações mais importantes:
-
-- Unit of Work
-- Repository
-
 ---
 
-### Toda a aplicação é baseada em uma solução única com X API's e uma aplicação web (MVC)
+### Toda a aplicação é baseada em uma solução única com X API's
 
 <p align="center">
      <img alt="Solution" src="https://github.com/alexandervieira/net8-otel-grafana-tempo/blob/master/images/solution.png" />
